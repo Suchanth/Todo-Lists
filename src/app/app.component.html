@@ -1,16 +1,18 @@
 <div class="container">
   <div class="card-row">
-  <div class="card-header">
-    <h2>{{title}}</h2>
-  </div>
-  <div class="card-body">
-    <app-task-forms [taskList]="taskList"></app-task-forms>
-  </div>
-  <div class="card-body">
-    <app-task-lists [tasks]="taskList">
-      <h2 *ngIf="taskList.length">My Current Tasks ({{taskList.length}})</h2>
-      <h3 *ngIf="!taskList.length">No tasks created...</h3>
-    </app-task-lists>
-  </div>
+    <div class="card-header">
+      <h2>{{ title }}</h2>
+    </div>
+    <div class="card-body">
+      <app-task-forms [taskList]="taskList"></app-task-forms>
+    </div>
+    <div class="card-body">
+      <app-task-lists [tasks]="taskList">
+        <h2 *ngIf="taskList.length">
+          My Current Tasks ({{ taskList.length }})
+        </h2>
+        <h3 *ngIf="!taskList.length">No tasks created...</h3>
+      </app-task-lists>
+    </div>
   </div>
 </div>

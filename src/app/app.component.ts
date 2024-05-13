@@ -8,19 +8,20 @@ import { TaskListsComponent } from './task-lists/task-lists.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,
+  imports: [
+    RouterOutlet,
     FormsModule,
     TaskFormsComponent,
     TaskListsComponent,
     NgIf,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'My Task-List';
-  taskList:string[]=[];
-  constructor(){}
+  taskList: string[] = [];
+  constructor() {}
 
   ngOnInit(): void {
     const storedTasks = localStorage.getItem('my_tasks');
@@ -28,5 +29,4 @@ export class AppComponent implements OnInit{
       this.taskList = JSON.parse(storedTasks);
     }
   }
- 
 }
